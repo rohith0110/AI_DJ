@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Continuous DJ Stream</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Continuous DJ</h1>
+            <div id="system-status-bar" class="status-bar">Initializing Stream...</div>
+        </header>
+
+        <main>
+            <section class="module" id="request-module">
+                <h2>Request a Track</h2>
+                <form id="song-search-form">
+                    <input type="text" id="song-query-input" placeholder="Enter song name or artist..." required>
+                    <button type="submit" id="search-song-button">Search</button>
+                </form>
+                <div id="search-results-display-area">
+                    <!-- Search results will appear here -->
+                </div>
+                <p id="user-voting-message" class="message-feedback"></p>
+            </section>
+
+            <section class="module" id="now-playing-module">
+                <h2>Now Streaming Mix</h2>
+                <div id="current-mix-info-area">
+                    <p><strong>Tracklist:</strong></p>
+                    <ul id="current-mix-tracklist">
+                        <li>Waiting for the beats to drop...</li>
+                    </ul>
+                </div>
+                <div class="audio-player-container">
+                    <audio id="main-audio-player" controls preload="auto"></audio>
+                    <audio id="preload-audio-player" preload="auto" style="display:none;"></audio> 
+                </div>
+                 <p class="player-note">If playback doesn't start, click play or interact with the page (browsers often block autoplay).</p>
+            </section>
+            
+            <section class="module" id="live-info-module">
+                <h2>Live Status</h2>
+                <p>Next Mix Generation Starts In: <strong id="next-mix-timer-span">--:--</strong></p>
+                <p id="server-activity-indicator" style="display:none; color: #ff5722; font-weight:500;">MIXING NEW TRACKS...</p>
+                <h3>Top Voted (Pool for Next Mix):</h3>
+                <ul id="top-voted-preview-list">
+                    <li>No votes yet! Be the first.</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>© AI DJ Project - Powered by Your Vibes & Code</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+/* static/css/style.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Very dark grey */
+    color: #e0e0e0; /* Light grey text */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    background-image: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d); /* Gradient background */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    background-color: rgba(20, 20, 30, 0.85); /* Dark semi-transparent */
+    backdrop-filter: blur(10px);
+    padding: 25px 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.65);
+    width: 90%;
+    max-width: 850px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00e5ff; /* Bright cyan */
+    margin-bottom: 15px;
+    font-size: 2.4em;
+    text-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff, 0 0 15px rgba(0, 229, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+.status-bar {
+    background-color: rgba(0,0,0,0.4);
+    color: #00e5ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 1em;
+    font-weight: 500;
+    border: 1px solid rgba(0, 229, 255, 0.5);
+}
+
+.module {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(30, 30, 50, 0.7); /* Darker section background */
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.module h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4081; /* Neon pink */
+    margin-top: 0;
+    margin-bottom: 18px;
+    text-shadow: 0 0 6px #ff4081;
+    border-bottom: 1px solid rgba(255,64,129,0.4);
+    padding-bottom: 10px;
+    font-size: 1.6em;
+}
+
+.module h3 {
+    color: #00e5ff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#song-search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"]#song-query-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #4a4a6a;
+    border-radius: 6px;
+    background-color: #2a2a3a;
+    color: #e0e0e0;
+    font-size: 1em;
+}
+input[type="text"]#song-query-input:focus {
+    outline: none;
+    border-color: #00e5ff;
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
+}
+
+button, input[type="submit"] {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    font-family: 'Roboto', sans-serif;
+}
+button:hover, input[type="submit"]:hover {
+    background-color: #ff6699;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(255,64,129,0.4);
+}
+button:disabled, input[type="submit"]:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.message-feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    min-height: 18px;
+    text-align: center;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+.message-feedback.success { background-color: rgba(76, 175, 80, 0.15); border-left-color: #4CAF50; color: #b2dfb2; }
+.message-feedback.error { background-color: rgba(244, 67, 54, 0.15); border-left-color: #F44336; color: #ffcdd2; }
+.message-feedback.info { background-color: rgba(33, 150, 243, 0.15); border-left-color: #2196F3; color: #bbdefb; }
+
+#search-results-display-area {
+    margin-top: 15px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 8px; /* Space for scrollbar */
+}
+.search-result-entry {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(45, 45, 70, 0.85);
+    border-bottom: 1px solid #2a2a4a;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s ease;
+}
+.search-result-entry:hover {
+    background-color: rgba(55, 55, 80, 0.95);
+}
+.search-result-entry img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.search-result-entry .song-info-title {
+    flex-grow: 1;
+    font-size: 0.95em;
+    color: #d5d5f0;
+    text-align: left;
+}
+.search-result-entry button {
+    padding: 7px 14px;
+    font-size: 0.85em;
+    background-color: #00e5ff;
+    color: #121222; /* Dark text for contrast */
+    margin-left: 10px;
+}
+.search-result-entry button:hover {
+    background-color: #33ffff;
+}
+
+#current-mix-tracklist, #top-voted-preview-list {
+    list-style-type: decimal; /* Numbered list for tracklist */
+    padding-left: 20px;
+}
+#current-mix-tracklist li, #top-voted-preview-list li {
+    background-color: rgba(45, 45, 70, 0.6);
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #ced0e0;
+    text-align: left;
+}
+#top-voted-preview-list .vote-count-text {
+    font-size: 0.8em;
+    color: #a0a0c0;
+    margin-left: 10px;
+}
+
+.audio-player-container audio {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+    /* Custom filter for audio player for a "techy" look */
+    filter: hue-rotate(180deg) contrast(110%) saturate(130%) brightness(90%);
+}
+.player-note {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#next-mix-timer-span {
+    font-weight: bold;
+    color: #ff4081; /* Pink for timer */
+    font-size: 1.1em;
+}
+#server-activity-indicator {
+     font-weight: 500; /* Bold for processing indicator */
+}
+
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 229, 255, 0.2);
+    font-size: 0.85em;
+    color: #9090b0;
+    text-align: center;
+}
+
+/* Custom Scrollbar (Webkit) */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: rgba(30, 30, 50, 0.4); border-radius: 5px; }
+::-webkit-scrollbar-thumb { background: #4a4a6a; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #00e5ff; }

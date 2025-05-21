@@ -1,0 +1,38 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env.*
+env/
+ENV/
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Downloaded media and temporary files
+youtube_downloads/
+spleeter_temp/
+generated_mixes/
+
+# Sensitive files
+cookies.txt 
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Log files (if you create any)
+*.log
+
+# Test files (if you create any for specific tests)
+test_mixer_downloads/
+test_mixer_spleeter/
+test_mixer_downloads_optionb/
+test_mixer_spleeter_optionb/
+test_final_mix.mp3
+test_final_mix_optionb.mp3
