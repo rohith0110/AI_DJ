@@ -36,3 +36,4 @@ test_mixer_downloads_optionb/
 test_mixer_spleeter_optionb/
 test_final_mix.mp3
 test_final_mix_optionb.mp3
+.vercel
